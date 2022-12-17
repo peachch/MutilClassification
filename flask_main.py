@@ -3,7 +3,7 @@ import traceback
 import re
 import yaml
 from utils.logger import get_logger
-from predcit import Predict
+from predict_by_sentence import Predict
 # 定义Flask
 application = Flask(__name__)
 application.config["JSOIN_AS_ASCII"] = False
