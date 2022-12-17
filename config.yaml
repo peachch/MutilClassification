@@ -1,0 +1,27 @@
+model:
+  roberta_path: ./pre_model/chinese-roberta-wwm-ext
+  num_classes: 33
+
+train:
+  device: "cuda"
+  dataloader:
+    batch_size: 16
+    shuffle: true
+    pin_memory: true
+    num_workers: 0
+
+  data:
+    corpus_file: "./data/train_data_25.xlsx"
+    label_file: "./vocabulary/vocabulary_list"
+    vocabulary_dir: "./vocabulary/vocabulary_list"
+    stopwords_file: "./vocabulary/stopwords_chinese.txt"
+    dictionary_file: "./vocabulary/diction_sorted_2nd.txt"
+
+  log:
+    train_interval: 100
+    log_dir: ./log
+    log_filename: log.txt
+
+  inference:
+    ckpt_path: ./model_new
+    batch_size: 16
